@@ -7,30 +7,45 @@ export class NumericId {
     return new NumericId(parseInt(value));
   }
 
+  public static fromInt(value: number) {
+    return new NumericId(value);
+  }
+
   public toString() {
     return this.value.toString().padStart(4, '0');
+  }
+
+  public toInt() {
+    return this.value;
   }
 }
 
 export class AdrStatus {
-  private readonly _value: string;
+  private readonly _alias: string;
   private readonly _label: string;
 
-  private constructor(value: string, label: string) {
-    this._value = value;
+  private static _statuses: AdrStatus[] = [
+    AdrStatus.proposed(),
+    AdrStatus.accepted(),
+    AdrStatus.rejected(),
+    AdrStatus.superseded(),
+  ];
+
+  private constructor(alias: string, label: string) {
+    this._alias = alias;
     this._label = label;
   }
 
-  public get value() {
-    return this._value;
+  public get alias() {
+    return this._alias;
   }
 
   public get label() {
     return this._label;
   }
 
-  public static create(value: string, label: string) {
-    return new AdrStatus(value, label);
+  public static create(alias: string, label: string) {
+    return new AdrStatus(alias, label);
   }
 
   public static proposed() {
@@ -39,6 +54,26 @@ export class AdrStatus {
 
   public static accepted() {
     return new AdrStatus('accepted', 'Accepted');
+  }
+
+  public static rejected() {
+    return new AdrStatus('rejected', 'Rejected');
+  }
+
+  public static superseded() {
+    return new AdrStatus('superseded', 'Superseded');
+  }
+
+  public static createStatusFromLabel(label: string) {
+    const status = AdrStatus._statuses.find((status) => status.label === label);
+    if (!status) {
+      throw new Error(`Invalid status label: ${label}`);
+    }
+    return status;
+  }
+
+  public static verifyIsValidStatusAlias(alias: string) {
+    return AdrStatus._statuses.some((status) => status.alias === alias);
   }
 }
 
@@ -64,9 +99,9 @@ export class AdrTimestamp {
 
 export class LinkDirection {
   private readonly _label: string;
-  private readonly _changeStatusTo: string;
+  private readonly _changeStatusTo: string | null;
 
-  private constructor(label: string, changeStatusTo: string) {
+  private constructor(label: string, changeStatusTo: string | null) {
     this._label = label;
     this._changeStatusTo = changeStatusTo;
   }
@@ -79,8 +114,11 @@ export class LinkDirection {
     return this._changeStatusTo;
   }
 
-  public static create(label: string, changeStatusTo: string) {
-    return new LinkDirection(label, changeStatusTo);
+  public static create(label: string, changeStatusToAlias: string | null = null) {
+    if (changeStatusToAlias && !AdrStatus.verifyIsValidStatusAlias(changeStatusToAlias)) {
+      throw new Error(`Invalid status alias: ${changeStatusToAlias}`);
+    }
+    return new LinkDirection(label, changeStatusToAlias);
   }
 }
 
@@ -207,5 +245,9 @@ export class Adr {
 
   public get relations(): ReadonlyArray<AdrRelation> {
     return this._relations;
+  }
+
+  public get timestamp() {
+    return this._timestamp;
   }
 }
