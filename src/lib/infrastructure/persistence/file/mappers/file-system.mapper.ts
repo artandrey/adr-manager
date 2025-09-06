@@ -1,4 +1,4 @@
-import { Adr, NumericId } from '../../../../../domain/entities/adr.entity';
+import { Adr, NumericId } from '../../../../domain/entities/adr.entity';
 
 export interface FileSystemMapper {
   toDomain(persistence: string, id: NumericId): Adr;

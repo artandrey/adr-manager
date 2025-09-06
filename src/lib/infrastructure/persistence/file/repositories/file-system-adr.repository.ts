@@ -3,7 +3,7 @@ import path from 'path';
 
 import { Adr, NumericId } from '../../../../domain/entities/adr.entity';
 import { AdrRepository } from '../../../../domain/repositories/adr.repository';
-import { FileSystemMapper } from '../markdown/mappers/file-system.mapper';
+import { FileSystemMapper } from '../mappers/file-system.mapper';
 
 export class FileSystemAdrRepository implements AdrRepository {
   constructor(

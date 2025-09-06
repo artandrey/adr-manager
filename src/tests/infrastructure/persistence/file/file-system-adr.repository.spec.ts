@@ -1,8 +1,9 @@
 import { memfs } from 'memfs';
 
 import { Adr, AdrStatus, NumericId } from '~lib/domain/entities/adr.entity';
-import { FileSystemMapper } from '~lib/infrastructure/persistence/file/markdown/mappers/file-system.mapper';
 import { FileSystemAdrRepository } from '~lib/infrastructure/persistence/file/repositories/file-system-adr.repository';
+
+import { FileSystemMapper } from '../../../../lib/infrastructure/persistence/file/mappers/file-system.mapper';
 
 let memFs: ReturnType<typeof memfs>;
 vi.mock('fs/promises', async () => {

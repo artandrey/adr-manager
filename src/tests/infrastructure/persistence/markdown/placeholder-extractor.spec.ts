@@ -1,4 +1,4 @@
-import { PlaceholderExtractor } from '../../../../lib/infrastructure/persistence/file/markdown/mappers/adr/placeholder-extractor';
+import { PlaceholderExtractor } from '../../../../lib/infrastructure/persistence/file/mappers/markdown/adr/placeholder-extractor';
 
 const template = `
 # {{title}}

@@ -1,5 +1,5 @@
 import { Adr, AdrStatus, AdrTimestamp, NumericId } from '../../../../../../domain/entities/adr.entity';
-import { FileSystemMapper } from '../file-system.mapper';
+import { FileSystemMapper } from '../../file-system.mapper';
 import { PlaceholderExtractor } from './placeholder-extractor';
 
 const template = `

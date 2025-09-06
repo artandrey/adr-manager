@@ -1,6 +1,6 @@
 import { Adr, AdrStatus, AdrTimestamp, NumericId } from '~lib/domain/entities/adr.entity';
 
-import { MarkdownAdrMapper } from '../../../../lib/infrastructure/persistence/file/markdown/mappers/adr/markdown-adr.mapper';
+import { MarkdownAdrMapper } from '../../../../lib/infrastructure/persistence/file/mappers/markdown/adr/markdown-adr.mapper';
 
 const targetAdr = Adr.builder(NumericId.fromString('0001'), AdrStatus.proposed())
   .timestamp(AdrTimestamp.create(new Date('2025-09-06')))
