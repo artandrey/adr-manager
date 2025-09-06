@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      class-constructor:
+        specifier: ^0.2.3
+        version: 0.2.3
     devDependencies:
       '@changesets/cli':
         specifier: ^2.29.6
@@ -1036,6 +1040,9 @@ packages:
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
+
+  class-constructor@0.2.3:
+    resolution: {integrity: sha512-YnHMk6msAg0A3zuVy77uR0HMmuVZcJ33XLwVXvraxGLsYtJquUNh8LRCldZyDOPLPCoFfGXTK26Wr2ECm90HDg==}
 
   cli-cursor@5.0.0:
     resolution: {integrity: sha512-aCj4O5wKyszjMmDT4tZj93kxyydN/K5zPWSCe6/0AV/AA1pqe5ZBIw0a2ZfPQV7lL5/yb5HsUreJ6UFAF1tEQw==}
@@ -3019,6 +3026,8 @@ snapshots:
       readdirp: 4.1.2
 
   ci-info@3.9.0: {}
+
+  class-constructor@0.2.3: {}
 
   cli-cursor@5.0.0:
     dependencies:
