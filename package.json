@@ -58,6 +58,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "class-constructor": "^0.2.3"
+    "class-constructor": "^0.2.3",
+    "commander": "^14.0.1"
   }
 }
