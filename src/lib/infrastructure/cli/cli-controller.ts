@@ -25,8 +25,21 @@ export class CliController {
       });
   }
 
+  public listCommand() {
+    this._program
+      .command('list')
+      .description('List all ADRs')
+      .action(async () => {
+        const { adrs } = await this._applicationInterface.listAdrs();
+        adrs.forEach((adr) => {
+          console.log(`- [${adr.id}] ${adr.title} (${adr.status.label})`);
+        });
+      });
+  }
+
   public bootstrap() {
     this.createCommand();
+    this.listCommand();
     this._program.parse(process.argv);
   }
 }
