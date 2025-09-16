@@ -91,4 +91,11 @@ describe('File system ADR repository', () => {
     const records = await repository.findAll();
     expect(records).toHaveLength(2);
   });
+
+  it('should create directory if it does not exist', async () => {
+    memFs.vol.reset();
+    const repository = new FileSystemAdrRepository(mockMapper, DIRECTORY_PATH);
+    await repository.save(Adr.builder(await repository.generateId(), AdrStatus.proposed()).build());
+    expect(memFs.vol.existsSync(DIRECTORY_PATH)).toBe(true);
+  });
 });

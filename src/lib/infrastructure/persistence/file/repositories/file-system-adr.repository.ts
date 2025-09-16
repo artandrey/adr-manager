@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile } from 'fs/promises';
+import { mkdir, readFile, readdir, stat, writeFile } from 'fs/promises';
 import path from 'path';
 
 import { Adr, NumericId } from '../../../../domain/entities/adr.entity';
@@ -28,10 +28,12 @@ export class FileSystemAdrRepository implements AdrRepository {
   }
 
   async generateId(): Promise<NumericId> {
+    await this.ensureDirectoryExists();
     return await this.getNextIncrementingId();
   }
 
   async save(adr: Adr): Promise<NumericId> {
+    await this.ensureDirectoryExists();
     const map = await this.buildAdrToFilenameMap();
 
     if (map.has(adr.id.toInt())) {
@@ -39,6 +41,12 @@ export class FileSystemAdrRepository implements AdrRepository {
     } else {
       return this.create(adr);
     }
+  }
+
+  private async ensureDirectoryExists(): Promise<void> {
+    await stat(this.directoryPath).catch(() => {
+      return mkdir(this.directoryPath, { recursive: true });
+    });
   }
 
   private async create(adr: Adr): Promise<NumericId> {
