@@ -6,5 +6,4 @@ import { FileSystemAdrRepository } from './infrastructure/persistence/file/repos
 const fileAdrRepository = new FileSystemAdrRepository(new MarkdownAdrMapper(), 'adr');
 const applicationInterface = new ApplicationInterface(fileAdrRepository);
 
-const cliController = new CliController(applicationInterface);
-cliController.bootstrap();
+export const cliController = new CliController(applicationInterface);
