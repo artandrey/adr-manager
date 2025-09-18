@@ -1,10 +1,11 @@
 {
-  "name": "",
+  "name": "test",
   "version": "0.0.0",
   "description": "Starter for building npm package",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "bin": {
+    "adr": "bin/index.js"
+  },
+  "main": "dist/index.cjs",
   "scripts": {
     "start:dev": "tsx src/lib/index.ts",
     "test:dev": "vitest",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.6",
     "@eslint/js": "^9.34.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.4",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22.15.3",
@@ -49,6 +51,7 @@
     "rollup": "^4.50.0",
     "rollup-plugin-delete": "^3.0.1",
     "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
     "tsc-files": "^1.1.4",
     "tslib": "^2.8.1",
     "tsup": "^8.4.0",
