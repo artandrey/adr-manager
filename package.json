@@ -1,6 +1,6 @@
 {
   "name": "@adr-manager/cli",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "CLI for convenient ADR management",
   "bin": {
     "adr": "bin/index.js"
