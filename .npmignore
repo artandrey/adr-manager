@@ -5,7 +5,7 @@ tsconfig.json
 tsconfig.src.json
 tsconfig.prod.json
 tsconfig.test.json
-tsup.config.ts
+rollup.config.mjs
 vitest.config.mts
 pnpm-lock.yaml
 cspell.json
