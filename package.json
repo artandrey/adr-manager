@@ -1,12 +1,12 @@
 {
-  "name": "",
+  "name": "@adr-manager/cli",
   "version": "0.0.0",
-  "description": "Starter for building npm package",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "description": "CLI for convenient ADR management",
+  "bin": {
+    "adr": "bin/index.js"
+  },
   "scripts": {
-    "start:dev": "tsc --watch",
+    "start:dev": "tsx src/lib/index.ts",
     "test:dev": "vitest",
     "test": "vitest run",
     "lint": "eslint --fix",
@@ -29,14 +29,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/.../.git"
+    "url": "git+https://github.com/artandrey/adr-manager.git"
   },
   "bugs": {
-    "url": "https://github.com/.../issues"
+    "url": "https://github.com/artandrey/adr-manager/issues"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.6",
     "@eslint/js": "^9.34.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.4",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22.15.3",
@@ -44,16 +45,23 @@
     "globals": "^16.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
+    "memfs": "^4.38.2",
     "prettier": "^3.6.2",
     "rollup": "^4.50.0",
     "rollup-plugin-delete": "^3.0.1",
     "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-esbuild": "^6.2.1",
     "tsc-files": "^1.1.4",
     "tslib": "^2.8.1",
     "tsup": "^8.4.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.41.0",
     "unplugin-swc": "^1.5.7",
     "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "class-constructor": "^0.2.3",
+    "commander": "^14.0.1"
   }
 }
