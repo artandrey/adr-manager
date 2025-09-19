@@ -3,13 +3,13 @@
 Installation:
 
 ```bash
-npm i @adr-manager/cli
+npm i -g @adr-manager/cli
 # or
-pnpm add @adr-manager/cli
+pnpm add -g @adr-manager/cli
 # or
-yarn add @adr-manager/cli
+yarn global add @adr-manager/cli
 # or
-bun add @adr-manager/cli
+bun add -g @adr-manager/cli
 ```
 
 Tool for convenient ADR management through CLI.
