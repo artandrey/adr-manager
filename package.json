@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "@adr-manager/cli",
   "version": "0.0.0",
-  "description": "Starter for building npm package",
+  "description": "CLI for convenient ADR management",
   "bin": {
     "adr": "bin/index.js"
   },
@@ -29,10 +29,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/.../.git"
+    "url": "git+https://github.com/artandrey/adr-manager.git"
   },
   "bugs": {
-    "url": "https://github.com/.../issues"
+    "url": "https://github.com/artandrey/adr-manager/issues"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.6",
