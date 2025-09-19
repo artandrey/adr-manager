@@ -1,44 +1,43 @@
-# Npm package starter
+# ADR manager CLI
 
-## To start
+Installation:
 
-1. Update general information in `package.json`
-
-- update `name`
-- update `description`
-- update `keywords`
-- update `author`
-
-2. Link repository in `package.json`
-
-```javascript
-{
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/.../.git"
-  },
-  "bugs": {
-    "url": "https://github.com/.../issues"
-  }
-}
+```bash
+npm i @adr-manager/cli
+# or
+pnpm add @adr-manager/cli
+# or
+yarn add @adr-manager/cli
+# or
+bun add @adr-manager/cli
 ```
 
-## CI setup
+Tool for convenient ADR management through CLI.
 
-Add `NPM_TOKEN` to github secrets
+API definition:
 
-Go to /Actions/General and set Workflow permissions to `Read and write permissions`
+Create:
 
-## How to publish
+```bash
+adr create 'Decision title'
+```
 
-Make some changes to the code
+Commands generates a document inside of adr folder with name 0001-decision-title.
+There is a date being automatically added to this document.
+Developer may now write the decision inside the document.
 
-Run `pnpm changeset` and describe your changes
+Create and accept immediately:
 
-Push your changes to github
+```bash
+adr create --accept 'Decision title'
+# or
+adr create -a 'Decision title'
+```
 
-Wait for the workflow to finish that will create a pull request with changes
+List:
 
-Merge the pull request
+```bash
+adr list
+```
 
-Wait for the workflow to finish that will publish the package to npm
+Linking, config and customization will be added in next releases.
