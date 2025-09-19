@@ -5,7 +5,6 @@
   "bin": {
     "adr": "bin/index.js"
   },
-  "main": "dist/index.cjs",
   "scripts": {
     "start:dev": "tsx src/lib/index.ts",
     "test:dev": "vitest",
