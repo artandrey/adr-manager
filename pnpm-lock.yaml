@@ -83,7 +83,7 @@ importers:
         version: 8.46.2(eslint@9.39.0)(typescript@5.9.3)
       unplugin-swc:
         specifier: ^1.5.7
-        version: 1.5.8(@swc/core@1.10.4)(rollup@4.52.5)
+        version: 1.5.9(@swc/core@1.10.4)(rollup@4.52.5)
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@22.15.29)(tsx@4.20.6)(yaml@2.8.1)
@@ -2140,8 +2140,8 @@ packages:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
 
-  unplugin-swc@1.5.8:
-    resolution: {integrity: sha512-6qVAQsCn/AMFiw7XGXkNC/q/Or4OpL0zRPertzLT1BoigjOQp0ktPxDWY4lc51FGwVbzW4V1BURaal1rpbJwSg==}
+  unplugin-swc@1.5.9:
+    resolution: {integrity: sha512-RKwK3yf0M+MN17xZfF14bdKqfx0zMXYdtOdxLiE6jHAoidupKq3jGdJYANyIM1X/VmABhh1WpdO+/f4+Ol89+g==}
     peerDependencies:
       '@swc/core': ^1.2.108
 
@@ -2149,8 +2149,8 @@ packages:
     resolution: {integrity: sha512-gwXJnPRewT4rT7sBi/IvxKTjsms7jX7QIDLOClApuZwR49SXbrB1z2NLUZ+vDHyqCj/n58OzRRqaW+B8OZi8vg==}
     engines: {node: '>=18.12.0'}
 
-  unplugin@2.3.10:
-    resolution: {integrity: sha512-6NCPkv1ClwH+/BGE9QeoTIl09nuiAt0gS28nn1PvYXsGKRwM2TCbFA2QiilmehPDTXIe684k4rZI1yl3A1PCUw==}
+  unplugin@2.3.11:
+    resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
     engines: {node: '>=18.12.0'}
 
   uri-js@4.4.1:
@@ -4202,12 +4202,12 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  unplugin-swc@1.5.8(@swc/core@1.10.4)(rollup@4.52.5):
+  unplugin-swc@1.5.9(@swc/core@1.10.4)(rollup@4.52.5):
     dependencies:
       '@rollup/pluginutils': 5.3.0(rollup@4.52.5)
       '@swc/core': 1.10.4
       load-tsconfig: 0.2.5
-      unplugin: 2.3.10
+      unplugin: 2.3.11
     transitivePeerDependencies:
       - rollup
 
@@ -4216,7 +4216,7 @@ snapshots:
       pathe: 2.0.3
       picomatch: 4.0.3
 
-  unplugin@2.3.10:
+  unplugin@2.3.11:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       acorn: 8.15.0
